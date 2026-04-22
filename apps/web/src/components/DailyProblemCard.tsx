@@ -55,7 +55,8 @@ const DailyProblemCard: React.FC<DailyProblemCardProps> = ({ problem, onStarSucc
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/user/star", {
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? "";
+      const response = await fetch(`${apiBaseUrl}/api/user/star`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

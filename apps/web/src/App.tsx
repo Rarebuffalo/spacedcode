@@ -32,6 +32,7 @@ function App() {
   const [totalUsers, setTotalUsers] = useState(0);
   const [activeToday, setActiveToday] = useState(0);
   const [showArchitecture, setShowArchitecture] = useState(false);
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? "";
   useKeyboardShortcut();
 
   useEffect(() => {
@@ -44,7 +45,7 @@ function App() {
     setError(null);
     
     try {
-      const response = await fetch("/api/leetcode/daily");
+      const response = await fetch(`${apiBaseUrl}/api/leetcode/daily`);
       const data = await response.json();
       
       if (data.success) {
@@ -63,7 +64,7 @@ function App() {
 
   const fetchStarredCount = async () => {
     try {
-      const response = await fetch("/api/user/stats");
+      const response = await fetch(`${apiBaseUrl}/api/user/stats`);
       const data = await response.json();
       
       if (data.success) {
