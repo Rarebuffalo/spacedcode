@@ -1,6 +1,6 @@
 {
   "name": "spacedcode-api",
-  "main": "src/index.ts",
+  "main": "dist/src/index.js",
   "compatibility_date": "2025-07-18",
   "compatibility_flags": ["nodejs_compat"],
   "dev": {
