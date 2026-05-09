@@ -36,7 +36,6 @@ export const TerminalLauncher: React.FC = () => {
       >
         <div className="flex items-center gap-2">
           <Terminal className="w-4 h-4 text-green-400" />
-          <span className="font-mono text-green-400 text-sm font-medium">&gt;_</span>
         </div>
 
         {/* Tooltip on hover */}

@@ -132,25 +132,22 @@ Available commands:
   `.trim(),
 
   projects: () => `
-1. SpacedCode
-   https://github.com/Rarebuffalo/spacedcode
-
-2. Sentinel
+1. Sentinel
    https://github.com/Rarebuffalo/Sentinel
 
-3. SecureLens Frontend
-   https://github.com/Rarebuffalo/securelens-frontend
-
-4. SecureLens Backend
+2. SecureLens Backend
    https://github.com/Rarebuffalo/securelens-backend
 
-5. Log Processing System
+3. Backend-Ledger
+   https://github.com/Rarebuffalo/Backend-Ledger
+
+4. Log Processing System
    https://github.com/Rarebuffalo/log-processing-system
 
-6. Indian Law RAG
-   https://github.com/Rarebuffalo/indian-law-rag
+5. SpacedCode
+   https://github.com/Rarebuffalo/spacedcode
 
-7. X-agent
+6. X-agent
    https://github.com/Rarebuffalo/X-agent
   `.trim(),
 

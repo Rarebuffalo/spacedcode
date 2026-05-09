@@ -16,8 +16,12 @@ console.log(
   "font-size: 14px; color: #4ade80;"
 );
 
+import { ThemeProvider } from "./components/theme-provider";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider defaultTheme="dark" storageKey="spacedcode-theme">
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );

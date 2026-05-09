@@ -99,18 +99,18 @@ const DailyProblemCard: React.FC<DailyProblemCardProps> = ({ problem, onStarSucc
   };
 
   return (
-    <Card className="mx-auto w-full max-w-2xl border-slate-700/80 bg-slate-900/95 text-slate-50 shadow-2xl shadow-black/20 backdrop-blur-sm">
+    <Card className="mx-auto w-full max-w-2xl border-slate-200 dark:border-slate-700/80 bg-white/90 dark:bg-slate-900/95 text-slate-900 dark:text-slate-50 shadow-lg dark:shadow-2xl shadow-black/5 dark:shadow-black/20 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-green-500/10">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle className="text-2xl font-bold tracking-tight text-slate-50">
+            <CardTitle className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
               LeetCode Daily Challenge
             </CardTitle>
-            <CardDescription className="mt-2 flex items-center gap-2 text-slate-400">
+            <CardDescription className="mt-2 flex items-center gap-2 text-slate-500 dark:text-slate-400">
               <Calendar className="w-4 h-4" />
               {formatDate(problem.date)}
               {problem.isMock && (
-                <Badge variant="outline" className="ml-2 border-slate-600 text-xs text-slate-300">
+                <Badge variant="outline" className="ml-2 border-slate-300 dark:border-slate-600 text-xs text-slate-500 dark:text-slate-300">
                   Demo Data
                 </Badge>
               )}
@@ -124,13 +124,13 @@ const DailyProblemCard: React.FC<DailyProblemCardProps> = ({ problem, onStarSucc
 
       <CardContent className="space-y-6">
         <div>
-          <h3 className="mb-2 text-xl font-semibold text-slate-100">{problem.title}</h3>
+          <h3 className="mb-2 text-xl font-semibold text-slate-900 dark:text-slate-100">{problem.title}</h3>
           <div className="flex flex-wrap gap-2 mt-3">
             {problem.tags.map((tag) => (
               <Badge
                 key={tag}
                 variant="secondary"
-                className="border border-slate-700 bg-slate-800 text-xs text-slate-200"
+                className="border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-xs text-slate-700 dark:text-slate-200"
               >
                 {tag}
               </Badge>
@@ -145,7 +145,7 @@ const DailyProblemCard: React.FC<DailyProblemCardProps> = ({ problem, onStarSucc
 
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-slate-200">Your Email</Label>
+            <Label htmlFor="email" className="text-slate-700 dark:text-slate-200">Your Email</Label>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Input
                 id="email"
@@ -153,13 +153,13 @@ const DailyProblemCard: React.FC<DailyProblemCardProps> = ({ problem, onStarSucc
                 placeholder="you@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 border-slate-700 bg-slate-900/90 text-slate-50 placeholder:text-slate-500"
+                className="flex-1 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/90 text-slate-900 dark:text-slate-50 placeholder:text-slate-400 dark:placeholder:text-slate-500"
                 disabled={isStarred}
               />
               <Button
                 onClick={handleStarProblem}
                 disabled={isLoading || isStarred || !email}
-                className="gap-2 border border-green-500/30 bg-green-500/10 text-green-300 hover:bg-green-500/20"
+                className="gap-2 border border-green-500/30 bg-green-50 dark:bg-green-500/10 text-green-700 dark:text-green-300 hover:bg-green-100 dark:hover:bg-green-500/20"
               >
                 {isLoading ? (
                   <Loader2 className="w-4 h-4 animate-spin" />
@@ -171,14 +171,14 @@ const DailyProblemCard: React.FC<DailyProblemCardProps> = ({ problem, onStarSucc
                 {isStarred ? "Starred" : "Star for Review"}
               </Button>
             </div>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-slate-500 dark:text-slate-400">
               Enter your email to receive a reminder in 3 days based on spaced repetition.
             </p>
           </div>
 
           {isStarred && (
-            <div className="rounded-md border border-green-500/20 bg-green-500/10 p-3">
-              <p className="flex items-center gap-2 text-sm text-green-300">
+            <div className="rounded-md border border-green-500/20 bg-green-50 dark:bg-green-500/10 p-3">
+              <p className="flex items-center gap-2 text-sm text-green-700 dark:text-green-300">
                 <Star className="w-4 h-4" />
                 Problem starred! You'll receive an email reminder on{" "}
                 {new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toLocaleDateString()}.
@@ -188,15 +188,15 @@ const DailyProblemCard: React.FC<DailyProblemCardProps> = ({ problem, onStarSucc
         </div>
       </CardContent>
 
-      <CardFooter className="flex justify-between border-t border-slate-800 pt-6">
-        <div className="text-sm text-slate-400">
+      <CardFooter className="flex justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+        <div className="text-sm text-slate-500 dark:text-slate-400">
           <p>Spaced repetition helps retain DSA concepts longer.</p>
           <p className="mt-1">Based on the Ebbinghaus forgetting curve.</p>
         </div>
         <Button
           variant="outline"
           asChild
-          className="border-slate-600 text-slate-100 hover:bg-slate-800 hover:text-slate-50"
+          className="border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-50"
         >
           <a
             href={problem.link}
